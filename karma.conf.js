@@ -15,7 +15,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      './src/services/calculator.service.official.js',
+      './src/services/calculator.service.js',
       './src/services/calculator.service.spec.js',
     ],
 
