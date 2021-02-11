@@ -1,6 +1,6 @@
 /* const assert = require('assert');
 const CalculatorTest = require('./calculator.service'); */
-const calculator = new Calculator();
+const calculator = new CalculatorService();
 
 describe('Calculator Methods', () => {
     describe('Should be true when...', () => {
