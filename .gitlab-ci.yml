@@ -9,7 +9,7 @@ build-job:
   stage: build
   script:
     - npm install
-    - ls -lha node_modules/
+    - ls -lh node_modules/
 
  test-job:
    image: node:latest
