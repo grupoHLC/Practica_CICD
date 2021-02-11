@@ -2,7 +2,7 @@ version: '3.1'
 
 services:
     hlc-cicd:
-        image: grupohlc/apache_build:master
+        image: grupohlc/app_build:main
         restart: always
         ports:
             - 8080:8080
