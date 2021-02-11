@@ -1,0 +1,27 @@
+{
+  "name": "calculator",
+  "version": "0.0.1",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test:calculator": "./node_modules/mocha/bin/mocha ./src/services/calculator.service.spec.js",
+    "start": "npx serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grupoHLC/Practica_CICD.git"
+  },
+  "author": "Fernando, Raul, David FF",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/grupoHLC/Practica_CICD/issues"
+  },
+  "homepage": "https://github.com/grupoHLC/Practica_CICD#readme",
+  "dependencies": {
+    "jasmine": "^3.6.4",
+    "karma": "^6.1.0",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-jasmine": "^4.0.1",
+    "mocha": "^8.3.0"
+  }
+}
