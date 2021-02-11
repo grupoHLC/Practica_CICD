@@ -15,8 +15,9 @@ test-job:
   image: node:latest
   stage: test
   script:
-    - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-    - sudo apt install ./google-chrome-stable_current_amd64.deb
+    - add-apt-repository ppa:saiarcot895/chromium-beta
+    - apt-get update
+    - apt-get install chromium-browser
     - npm install
     - npm run test:calculator
 
