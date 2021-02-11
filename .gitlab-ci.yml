@@ -62,6 +62,3 @@ deploy-dev-job:
   - ssh -o StrictHostKeyChecking=no root@$VPS_DEPLOY "cd /var/www/ci-cd/ && sh ./borrarcarpeta.sh && git clone $GIT_REPOSITORY proyecto_HLC_CICD"
   only:
     - develop
-
-
-
