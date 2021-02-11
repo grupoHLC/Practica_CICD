@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test:calculator": "./node_modules/mocha/bin/mocha ./src/services/calculator.service.spec.js",
+    "test:calculator": "karma start",
     "start": "npx serve"
   },
   "repository": {
