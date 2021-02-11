@@ -15,6 +15,7 @@ test-job:
   image: node:latest
   stage: test
   script:
+   - npm install
    - npm run test:calculator
 
 release-prod-job:
