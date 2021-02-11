@@ -28,7 +28,7 @@ release-prod-job:
     - docker build --pull -t "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG" .
     - docker push "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG"
   only:
-    - master
+    - main
 
 deploy-prod-job:
   stage: deploy
@@ -43,9 +43,9 @@ deploy-prod-job:
 
   script:
     - scp -o StrictHostKeyChecking=no ./docker-compose.yml root@$VPS_DEPLOY:/root/ci-cd/docker-compose.yml
-    - ssh -o StrictHostKeyChecking=no root@$VPS_DEPLOY "cd /root/ci-cd && docker image rm -f grupohlc/app_build:master && docker-compose down && docker-compose up -d"
+    - ssh -o StrictHostKeyChecking=no root@$VPS_DEPLOY "cd /root/ci-cd && docker image rm -f grupohlc/app_build:main && docker-compose down && docker-compose up -d"
   only:
-    - master
+    - main
 
 deploy-dev-job:
   stage: deploy
