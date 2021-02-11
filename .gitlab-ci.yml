@@ -9,12 +9,12 @@ build-job:
   stage: build
   script:
     - npm install
-    - ls -lh node_modules/
+    - ls -lha node_modules/
 
- test-job:
-   image: node:latest
-   stage: test
-   script:
+test-job:
+  image: node:latest
+  stage: test
+  script:
     - npm install
     - npm run test:calculator
 
