@@ -12,14 +12,24 @@ build-job:
     - ls -lha node_modules/
 
 test-job:
-  image: node:latest
+  image: ubuntu:latest
   stage: test
   script:
-    - add-apt-repository ppa:saiarcot895/chromium-beta
     - apt-get update
-    - apt-get install chromium-browser
+    - apt install curl -y
+    - curl -sL https://deb.nodesource.com/setup_6.x
+    - apt-get install -y nodejs
+    - apt-get update
+    - apt install firefox -y
+    - curl -sL https://deb.nodesource.com/setup_12.x
+    - apt-get install nodejs -y
+    - node --version
+    - apt-get install npm -y
+    - npm --version
+    - apt-get update
     - npm install
     - npm run test:calculator
+
 
 release-prod-job:
   image: docker:19.03.12
@@ -65,3 +75,4 @@ deploy-dev-job:
   - ssh -o StrictHostKeyChecking=no root@$VPS_DEPLOY "cd /var/www/ci-cd/ && sh ./borrarcarpeta.sh && git clone $GIT_REPOSITORY proyecto_HLC_CICD"
   only:
     - develop
+
