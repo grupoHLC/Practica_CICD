@@ -17,8 +17,6 @@ test-job:
   script:
     - apt-get update
     - apt install curl -y
-    - curl -sL https://deb.nodesource.com/setup_6.x
-    - apt-get install -y nodejs
     - apt-get update
     - apt install firefox -y
     - curl -sL https://deb.nodesource.com/setup_12.x
@@ -29,7 +27,6 @@ test-job:
     - apt-get update
     - npm install
     - npm run test:calculator
-
 
 release-prod-job:
   image: docker:19.03.12
@@ -75,4 +72,3 @@ deploy-dev-job:
   - ssh -o StrictHostKeyChecking=no root@$VPS_DEPLOY "cd /var/www/ci-cd/ && sh ./borrarcarpeta.sh && git clone $GIT_REPOSITORY proyecto_HLC_CICD"
   only:
     - develop
-
