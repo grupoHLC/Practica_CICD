@@ -17,14 +17,12 @@ test-job:
   script:
     - apt-get update
     - apt install curl -y
-    - apt-get update
     - apt install firefox -y
     - curl -sL https://deb.nodesource.com/setup_12.x
     - apt-get install nodejs -y
     - node --version
     - apt-get install npm -y
     - npm --version
-    - apt-get update
     - npm install
     - npm run test:calculator
 
