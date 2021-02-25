@@ -67,6 +67,6 @@ deploy-dev-job:
    - ssh-keyscan gitlab.com >> ~/.ssh/known_hosts
    - chmod 644 ~/.ssh/known_hosts
   script:
-  - ssh -o StrictHostKeyChecking=no root@$VPS_DEPLOY "cd /var/www/ci-cd/ && sh ./borrarcarpeta.sh && git clone $GIT_REPOSITORY proyecto_HLC_CICD"
+  - ssh -o StrictHostKeyChecking=no root@$VPS_DEPLOY "cd /var/www/ci-cd/ && sh ./borrarcarpeta.sh && git clone -b develop $GIT_REPOSITORY proyecto_HLC_CICD"
   only:
     - develop
